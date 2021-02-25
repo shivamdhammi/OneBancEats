@@ -1,9 +1,11 @@
-package com.example.onebancassign
+package com.example.onebancassign.home
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.onebancassign.R
+import com.example.onebancassign.model.DishesData
 import kotlinx.android.synthetic.main.dish_item.view.*
 import java.util.ArrayList
 
@@ -18,7 +20,7 @@ class TopDishesAdapter(var listOfDishes: ArrayList<DishesData?>):RecyclerView.Ad
     }
 
     override fun onBindViewHolder(holder: TopDishesAdapterViewHolder, position: Int) {
-        if(holder is TopDishesAdapter.TopDishesAdapterViewHolder){
+        if(holder is TopDishesAdapterViewHolder){
             holder.bind(listOfDishes[position])
         }
     }

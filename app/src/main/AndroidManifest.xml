@@ -9,9 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.OneBancAssign">
-        <activity android:name=".Cart"></activity>
-        <activity android:name=".ListOfDishes" />
-        <activity android:name=".Home">
+        <activity android:name=".cart.Cart"/>
+        <activity android:name=".cuisineMenu.ListOfDishes" />
+        <activity android:name=".home.Home">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

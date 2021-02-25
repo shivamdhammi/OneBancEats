@@ -1,10 +1,11 @@
-package com.example.onebancassign
+package com.example.onebancassign.cart
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.dish_item.view.*
+import com.example.onebancassign.model.DishesData
+import com.example.onebancassign.R
 import kotlinx.android.synthetic.main.item_cart.view.*
 
 class CartAdapter(var listOfDishes: ArrayList<DishesData>) : RecyclerView.Adapter<CartAdapter.CartAdapterViewHolder>(){
@@ -19,7 +20,7 @@ class CartAdapter(var listOfDishes: ArrayList<DishesData>) : RecyclerView.Adapte
     }
 
     override fun onBindViewHolder(holder: CartAdapterViewHolder, position: Int) {
-        if(holder is CartAdapter.CartAdapterViewHolder){
+        if(holder is CartAdapterViewHolder){
             holder.bind(listOfDishes[position])
         }
     }

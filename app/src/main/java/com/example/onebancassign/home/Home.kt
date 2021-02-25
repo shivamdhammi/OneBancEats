@@ -1,4 +1,4 @@
-package com.example.onebancassign
+package com.example.onebancassign.home
 
 import android.content.Intent
 import android.content.res.ColorStateList
@@ -6,15 +6,19 @@ import android.content.res.Configuration
 import android.content.res.Resources
 import android.os.Bundle
 import android.util.DisplayMetrics
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager.widget.ViewPager
+import com.example.onebancassign.R
+import com.example.onebancassign.cart.Cart
+import com.example.onebancassign.home.cuisine.cuisineAdapter
+import com.example.onebancassign.model.CuisineData
+import com.example.onebancassign.model.DishesData
 import kotlinx.android.synthetic.main.activity_home.*
-import kotlinx.android.synthetic.main.activity_list_of_dishes.*
+import java.util.*
 import kotlin.collections.ArrayList
-import java.util.Locale
 
 
 class Home : AppCompatActivity() {
@@ -25,6 +29,9 @@ class Home : AppCompatActivity() {
     var currentLanguage: String? = "en"
     var currentLang: String = "incoming"
     var dishes = ArrayList<DishesData>()
+
+    var adapter: cuisineAdapter? = null
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,44 +47,28 @@ class Home : AppCompatActivity() {
         addListToRecyclerView()
         initializeCartButton()
 
+        home_cart.backgroundTintList = ColorStateList.valueOf(
+            ContextCompat.getColor(
+                applicationContext,
+                R.color.pink
+            )
+        )
+        home_language_changer.backgroundTintList = ColorStateList.valueOf(
+            ContextCompat.getColor(
+                applicationContext,
+                R.color.pink
+            )
+        )
 
-//        home_top_1.dish_item_add.setOnClickListener {
-//            if(home_top_1.dish_item_quantity.text=="0"){
-//                home_top_1.dish_item_add.visibility = View.GONE
-//                home_top_1.dish_item_quantity_counter.visibility = View.VISIBLE
-//                home_top_1.dish_item_quantity.text="1"
-//            }else{
-//
-//            }
-//
-//        }
+        ////////////////////////////////////////////////////
 
-//        var loading = true
-//        var pastVisiblesItems: Int
-//        var visibleItemCount: Int
-//        var totalItemCount: Int
-//
-//        home_cuisines_view.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-//            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
-//                Log.d("positionXY",dx.toString()+"  " +dy.toString())
-//                if (dx > 0) { //check for scroll down
-//                    visibleItemCount = linearLayoutManager.childCount
-//                    totalItemCount = linearLayoutManager.itemCount
-//                    pastVisiblesItems = linearLayoutManager.findFirstVisibleItemPosition()
-//                    if (loading) {
-//                        if (visibleItemCount + pastVisiblesItems >= totalItemCount) {
-//                            loading = false
-//                            Log.v("...", "Last Item Wow !")
-//                            // Do pagination.. i.e. fetch new data
-//                            loading = true
-//                        }
-//                    }
-//                }
-//            }
-//        })
+        adapter = cuisineAdapter(this.supportFragmentManager, this)
+        home_cuisines_view_pager?.setAdapter(adapter)
+        home_cuisines_view_pager?.setPageTransformer(false, adapter)
 
-        home_cart.backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(applicationContext, R.color.pink))
-        home_language_changer.backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(applicationContext, R.color.pink))
+        home_cuisines_view_pager?.setCurrentItem(FIRST_PAGE)
+        home_cuisines_view_pager?.setOffscreenPageLimit(4)
+        home_cuisines_view_pager?.setPageMargin(-100)
     }
 
     private fun setLocale(localeName: String) {
@@ -94,23 +85,15 @@ class Home : AppCompatActivity() {
     }
 
     private fun initializeDishesData(){
-        dishes.add(DishesData("Something1",100,0,0,1.9f))
-        dishes.add(DishesData("Something2",100,0,0,4.3f))
-        dishes.add(DishesData("Something3",100,0,0,5.0f))
-        dishes.add(DishesData("Something4",100,0,0,2.4f))
-        dishes.add(DishesData("Something5",100,0,0,5.0f))
-        dishes.add(DishesData("Something6",100,0,0,1.8f))
+        dishes.add(DishesData("Something1", 100, 0, 0, 1.9f))
+        dishes.add(DishesData("Something2", 100, 0, 0, 4.3f))
+        dishes.add(DishesData("Something3", 100, 0, 0, 5.0f))
         cuisineDishes["north indian"] = dishes
 
         dishes.clear()
-        dishes.add(DishesData("Something1",100,0,0,4.5f))
-        dishes.add(DishesData("Something2",100,0,0,4.8f))
-        dishes.add(DishesData("Something3",100,0,0,4.7f))
-        dishes.add(DishesData("Something4",100,0,0,4.7f))
-        dishes.add(DishesData("Something5",100,0,0,4.7f))
-        dishes.add(DishesData("Something6",100,0,0,4.7f))
-        dishes.add(DishesData("Something7",100,0,0,4.7f))
-        dishes.add(DishesData("Something8",100,0,0,4.7f))
+        dishes.add(DishesData("Something1", 100, 0, 0, 4.5f))
+        dishes.add(DishesData("Something2", 100, 0, 0, 4.8f))
+        dishes.add(DishesData("Something3", 100, 0, 0, 4.7f))
         cuisineDishes["Top Dishes"] = dishes
 
     }
@@ -118,8 +101,8 @@ class Home : AppCompatActivity() {
     private fun initializeCuisinesData(){
         with(cuisineData) {
             add(CuisineData("North Indian", 0))
-            add(CuisineData("Chinese,", 0))
-            add(CuisineData("Mexican,", 0))
+            add(CuisineData("Chinese", 0))
+            add(CuisineData("Mexican", 0))
             add(CuisineData("South Indian", 0))
             add(CuisineData("Italian", 0))
         }
@@ -160,6 +143,9 @@ class Home : AppCompatActivity() {
     }
 
     companion object{
-        var cuisineDishes = mutableMapOf<String,ArrayList<DishesData>>()
+        var cuisineDishes = mutableMapOf<String, ArrayList<DishesData>>()
+        val PAGES = 4
+        val LOOPS = 1000
+        val FIRST_PAGE = PAGES * LOOPS / 2
     }
 }

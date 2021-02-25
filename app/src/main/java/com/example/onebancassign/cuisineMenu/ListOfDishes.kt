@@ -1,11 +1,12 @@
-package com.example.onebancassign
+package com.example.onebancassign.cuisineMenu
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.activity_home.*
+import com.example.onebancassign.R
+import com.example.onebancassign.home.Home
+import com.example.onebancassign.model.DishesData
 import kotlinx.android.synthetic.main.activity_list_of_dishes.*
 import java.util.ArrayList
 

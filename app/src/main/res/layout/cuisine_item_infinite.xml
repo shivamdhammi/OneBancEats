@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_marginHorizontal="20dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center">
+    <com.example.onebancassign.home.cuisine.cuisineLinearLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/cuisine_item"
+            android:id="@+id/cuisine_item_view_pager">
+        </include>
+    </com.example.onebancassign.home.cuisine.cuisineLinearLayout>
+</LinearLayout>

@@ -1,10 +1,13 @@
-package com.example.onebancassign
+package com.example.onebancassign.home
 
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.onebancassign.cuisineMenu.ListOfDishes
+import com.example.onebancassign.R
+import com.example.onebancassign.model.CuisineData
 import kotlinx.android.synthetic.main.cuisine_item.view.*
 
 

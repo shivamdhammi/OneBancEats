@@ -1,11 +1,11 @@
-package com.example.onebancassign
+package com.example.onebancassign.cuisineMenu
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.cuisine_item.view.*
+import com.example.onebancassign.R
+import com.example.onebancassign.model.DishesData
 import kotlinx.android.synthetic.main.dish_item.view.*
 import java.util.ArrayList
 
@@ -21,7 +21,7 @@ class ListOfDishesAdapter(var listOfDishes: ArrayList<DishesData?>): RecyclerVie
     }
 
     override fun onBindViewHolder(holder: ListOfDishesAdapterViewHolder, position: Int) {
-        if(holder is ListOfDishesAdapter.ListOfDishesAdapterViewHolder){
+        if(holder is ListOfDishesAdapterViewHolder){
             holder.bind(listOfDishes[position])
         }
     }

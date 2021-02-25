@@ -1,4 +1,4 @@
-package com.example.onebancassign
+package com.example.onebancassign.model
 
 data class DishesData(
     var name: String,

@@ -1,13 +1,13 @@
-package com.example.onebancassign
+package com.example.onebancassign.cart
 
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import com.example.onebancassign.model.DishesData
+import com.example.onebancassign.R
 import kotlinx.android.synthetic.main.activity_cart.*
-import kotlinx.android.synthetic.main.activity_home.*
 
 class Cart : AppCompatActivity() {
     var selectedButton = "Delivery"
