@@ -19,13 +19,7 @@ import kotlinx.android.synthetic.main.cuisine_item_infinite.view.*
 class CuisineFragment: Fragment(){
     var cuisineData = ArrayList<CuisineData>()
 
-//    var mResources = intArrayOf(
-//        R.drawable.intro_1,
-//        R.drawable.intro_2,
-//        R.drawable.intro_3,
-//        R.drawable.intro_4,
-//        R.drawable.intro_5
-//    )
+
 
 
     fun newInstance(context: Home?, pos: Int, scale: Float): Fragment {
@@ -44,11 +38,11 @@ class CuisineFragment: Fragment(){
     ): View? {
         Log.d("Boken","1")
         with(cuisineData) {
-            add(CuisineData("North Indian", 0))
-            add(CuisineData("Chinese", 0))
-            add(CuisineData("Mexican", 0))
-            add(CuisineData("South Indian", 0))
-            add(CuisineData("Italian", 0))
+            add(CuisineData("North Indian", R.drawable.north_indian))
+            add(CuisineData("Chinese", R.drawable.chinese))
+            add(CuisineData("Mexican", R.drawable.mexican))
+            add(CuisineData("South Indian", R.drawable.southindian))
+            add(CuisineData("Italian", R.drawable.pizza))
         }
         if (container == null) {
             return null
@@ -59,6 +53,7 @@ class CuisineFragment: Fragment(){
         val pos = this.arguments!!.getInt("pos")
 
         l.cuisine_item_view_pager.Cuisine_Adapter_Name.text = cuisineData[pos].name
+        l.cuisine_item_view_pager.Cuisine_Adapter_Image.setImageResource(cuisineData[pos].image)
         Log.d("Dhammi","1")
         l.setOnClickListener {
             Log.d("Dhammi","2")

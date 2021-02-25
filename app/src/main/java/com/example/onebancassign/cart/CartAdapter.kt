@@ -36,6 +36,8 @@ class CartAdapter(var listOfDishes: ArrayList<DishesData>) : RecyclerView.Adapte
             with(itemView){
                 cart_item_dish_name.text = listOfDishes?.name
                 cart_item_dish_quantity.text = "x " + listOfDishes?.quantity
+                val price = listOfDishes?.price!!.toInt() * listOfDishes?.quantity!!.toInt()
+                cart_item_dish_price.text = "Rs. " + price
             }
         }
     }

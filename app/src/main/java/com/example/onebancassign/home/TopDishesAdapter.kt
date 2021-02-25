@@ -41,6 +41,7 @@ class TopDishesAdapter(var listOfDishes: ArrayList<DishesData?>):RecyclerView.Ad
                     dish_item_quantity.text = "1"
                     dish_item_add.visibility = View.GONE
                     dish_item_quantity_counter.visibility = View.VISIBLE
+                    addDishToCart(listOfDishes,dish_item_quantity.text.toString())
                 }
                 dish_item_quantity_minus.setOnClickListener {
                     dish_item_quantity.text = (dish_item_quantity.text.toString().toInt() - 1).toString()
@@ -48,13 +49,34 @@ class TopDishesAdapter(var listOfDishes: ArrayList<DishesData?>):RecyclerView.Ad
                         dish_item_add.visibility = View.VISIBLE
                         dish_item_quantity_counter.visibility = View.GONE
                     }
+                    addDishToCart(listOfDishes,dish_item_quantity.text.toString())
                 }
                 dish_item_quantity_plus.setOnClickListener {
                     dish_item_quantity.text = (dish_item_quantity.text.toString().toInt() + 1).toString()
+                    addDishToCart(listOfDishes,dish_item_quantity.text.toString())
                 }
 
 
             }
+
+        }
+    }
+
+    private fun addDishToCart(listOfDishes: DishesData?,quantity: String?){
+        if(Home.cartList.containsKey(listOfDishes?.name)){
+            if(quantity=="0"){
+                Home.cartList.remove(listOfDishes?.name)
+            }
+            else{
+                Home.cartList[listOfDishes?.name] =
+                    DishesData(listOfDishes?.name,listOfDishes?.price,
+                        listOfDishes?.image,quantity!!.toInt(),listOfDishes?.rating)
+            }
+        }
+        else{
+            Home.cartList[listOfDishes?.name.toString()]=
+                DishesData(listOfDishes?.name,listOfDishes?.price,
+                    listOfDishes?.image,1,listOfDishes?.rating)
 
         }
     }

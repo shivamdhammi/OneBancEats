@@ -7,13 +7,14 @@ import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.onebancassign.model.DishesData
 import com.example.onebancassign.R
+import com.example.onebancassign.home.Home
 import kotlinx.android.synthetic.main.activity_cart.*
 
 class Cart : AppCompatActivity() {
     var selectedButton = "Delivery"
     private lateinit var linearLayoutManager: LinearLayoutManager
     var dishes = ArrayList<DishesData>()
-
+    var totalPrice = 0.0f
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,10 +49,20 @@ class Cart : AppCompatActivity() {
     }
 
     private fun initializeCartList(){
-        dishes.add(DishesData("Chole Bhature",100,0,0,1.9f))
-        dishes.add(DishesData("Pizza",100,0,0,4.3f))
-        dishes.add(DishesData("Burger",100,0,0,5.0f))
-        dishes.add(DishesData("Pasta",100,0,0,2.4f))
+        for(item in Home.cartList){
+            var name = item.value?.name
+            var price = item.value?.price
+            var image = item.value?.image
+            var quantity = item.value?.quantity
+            var rating = item.value?.rating
+            dishes.add(DishesData(name,price, image, quantity, rating))
+            totalPrice += price!!.toFloat()*quantity!!.toFloat()
+        }
+
+        cart_sub_total.text = totalPrice.toString()
+        cart_cgst.text = (totalPrice*(0.025f)).toString()
+        cart_gst.text = (totalPrice*(0.025f)).toString()
+        cart_grand_total.text = (totalPrice + 2 *((totalPrice*(0.025f)))).toString()
         linearLayoutManager = LinearLayoutManager(this)
         cart_list_of_dishes.layoutManager = linearLayoutManager
         cart_list_of_dishes.adapter = CartAdapter(dishes)

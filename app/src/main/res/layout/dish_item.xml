@@ -90,7 +90,10 @@
             app:layout_constraintTop_toBottomOf="@id/dish_item_image">
 
             <TextView
+                android:background="@color/pink"
+                android:textColor="@color/white"
                 android:id="@+id/dish_item_add"
+                android:padding="5dp"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/ic_baseline_add_24"
@@ -107,11 +110,12 @@
                 android:weightSum="3">
 
                 <ImageView
+                    android:background="@color/pink"
                     android:id="@+id/dish_item_quantity_minus"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:src="@drawable/ic_baseline_horizontal_rule_24" />
+                    android:src="@drawable/ic_baseline_remove_24" />
 
                 <TextView
                     android:id="@+id/dish_item_quantity"
@@ -123,6 +127,7 @@
                     android:text="0" />
 
                 <ImageView
+                    android:background="@color/pink"
                     android:id="@+id/dish_item_quantity_plus"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"

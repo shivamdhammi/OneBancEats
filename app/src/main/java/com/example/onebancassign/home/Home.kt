@@ -85,22 +85,23 @@ class Home : AppCompatActivity() {
     }
 
     private fun initializeDishesData(){
-        dishes.add(DishesData("Something1", 100, 0, 0, 1.9f))
-        dishes.add(DishesData("Something2", 100, 0, 0, 4.3f))
-        dishes.add(DishesData("Something3", 100, 0, 0, 5.0f))
+        dishes = ArrayList(emptyList<DishesData>())
+        dishes.add(DishesData("Chole Bhature", 100, 0, 0, 1.9f))
+        dishes.add(DishesData("Rajma Chawal", 100, 0, 0, 4.3f))
+        dishes.add(DishesData("Prantha", 100, 0, 0, 5.0f))
         cuisineDishes["north indian"] = dishes
 
-        dishes.clear()
-        dishes.add(DishesData("Something1", 100, 0, 0, 4.5f))
-        dishes.add(DishesData("Something2", 100, 0, 0, 4.8f))
-        dishes.add(DishesData("Something3", 100, 0, 0, 4.7f))
+        dishes = ArrayList(emptyList<DishesData>())
+        dishes.add(DishesData("Panner Momos", 100, 0, 0, 4.5f))
+        dishes.add(DishesData("Tandoori Pizza", 100, 0, 0, 4.8f))
+        dishes.add(DishesData("Masala Fries", 100, 0, 0, 4.7f))
         cuisineDishes["Top Dishes"] = dishes
 
     }
 
     private fun initializeCuisinesData(){
         with(cuisineData) {
-            add(CuisineData("North Indian", 0))
+            add(CuisineData("North Indian", R.drawable.north_indian))
             add(CuisineData("Chinese", 0))
             add(CuisineData("Mexican", 0))
             add(CuisineData("South Indian", 0))
@@ -144,6 +145,7 @@ class Home : AppCompatActivity() {
 
     companion object{
         var cuisineDishes = mutableMapOf<String, ArrayList<DishesData>>()
+        var cartList = mutableMapOf<String?, DishesData?>()
         val PAGES = 4
         val LOOPS = 1000
         val FIRST_PAGE = PAGES * LOOPS / 2
