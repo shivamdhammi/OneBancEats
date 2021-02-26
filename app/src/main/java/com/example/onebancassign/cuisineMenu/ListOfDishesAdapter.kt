@@ -1,12 +1,15 @@
 package com.example.onebancassign.cuisineMenu
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.onebancassign.R
+import com.example.onebancassign.cart.Cart
 import com.example.onebancassign.home.Home
 import com.example.onebancassign.model.DishesData
+import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.dish_item.view.*
 import java.util.ArrayList
 
@@ -60,6 +63,11 @@ class ListOfDishesAdapter(var listOfDishes: ArrayList<DishesData?>): RecyclerVie
 
             }
         }
+
+    }
+
+    private fun checkForQuantity(){
+
     }
 
     private fun addDishToCart(listOfDishes: DishesData?,quantity: String?){
@@ -80,4 +88,6 @@ class ListOfDishesAdapter(var listOfDishes: ArrayList<DishesData?>): RecyclerVie
 
         }
     }
+
+
 }

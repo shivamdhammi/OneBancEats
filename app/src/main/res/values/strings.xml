@@ -1,6 +1,33 @@
 <resources>
     <string name="app_name">OneBancAssign</string>
 
-    <string name="top_dish_1">Chole Bhature</string>
-    <string name="ahsdjkashdashd">ahsdjkashdashd</string>
+    <string name="chole_bhature">Chole Bhature</string>
+    <string name="rajma_chawal">Rajma Chawal</string>
+    <string name="prantha">Prantha</string>
+    <string name="north_indian">North Indian</string>
+    <string name="panner_momos">Panner Momos</string>
+    <string name="tandoori_pizza">Tandoori Pizza</string>
+    <string name="masala_fries">Masala Fries</string>
+    <string name="top_dishes">Top Dishes</string>
+    <string name="chinese">Chinese</string>
+    <string name="mexican">Mexican</string>
+    <string name="south_indian">South Indian</string>
+    <string name="italian">Italian</string>
+    <string name="chole_puri">Chole Puri</string>
+    <string name="aaloo_gobi">Aaloo Gobi</string>
+    <string name="daal_makhni">Daal Makhni</string>
+    <string name="choose_cuisine">Cuisines to choose from</string>
+    <string name="our_top_dishes">Our top Dishes</string>
+    <string name="cart">Cart</string>
+    <string name="select_payment">Select Payment Method</string>
+    <string name="select_address">Select Delivery Address</string>
+    <string name="total_amount">Total Amount of the dishes:</string>
+    <string name="cgst">CGST (2.5%)</string>
+    <string name="gst_2_5">GST (2.5%)</string>
+    <string name="grand_total">Grand Total:</string>
+    <string name="pick_up">Pick Up</string>
+    <string name="delivery">Delivery</string>
+    <string name="check_out">Check Out</string>
+    <string name="money">money</string>
+    <string name="add">Add</string>
 </resources>

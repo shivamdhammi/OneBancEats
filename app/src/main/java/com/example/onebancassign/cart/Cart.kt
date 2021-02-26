@@ -62,7 +62,7 @@ class Cart : AppCompatActivity() {
         cart_sub_total.text = totalPrice.toString()
         cart_cgst.text = (totalPrice*(0.025f)).toString()
         cart_gst.text = (totalPrice*(0.025f)).toString()
-        cart_grand_total.text = (totalPrice + 2 *((totalPrice*(0.025f)))).toString()
+        cart_grand_total.text ="Rs. " + (totalPrice + 2 *((totalPrice*(0.025f)))).toString()
         linearLayoutManager = LinearLayoutManager(this)
         cart_list_of_dishes.layoutManager = linearLayoutManager
         cart_list_of_dishes.adapter = CartAdapter(dishes)

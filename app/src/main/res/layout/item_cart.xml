@@ -7,8 +7,8 @@
     android:layout_height="wrap_content"
     android:layout_margin="10dp">
     <ImageView
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
         android:src="@drawable/veg"
         android:id="@+id/cart_item_veg"
         app:layout_constraintTop_toTopOf="parent"
@@ -19,6 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@id/cart_item_veg"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,6 +29,7 @@
         android:layout_marginStart="10dp"
         android:layout_height="wrap_content"
         android:text="TextView"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/cart_item_dish_name"
         app:layout_constraintTop_toTopOf="@+id/cart_item_dish_name" />
 
@@ -36,6 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/cart_item_dish_name" />
 </androidx.constraintlayout.widget.ConstraintLayout>

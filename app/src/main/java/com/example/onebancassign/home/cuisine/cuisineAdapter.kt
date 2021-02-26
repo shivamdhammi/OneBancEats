@@ -22,19 +22,16 @@ class cuisineAdapter(var fm: FragmentManager, var context: Home?): FragmentPager
         scale = if (position == Home.FIRST_PAGE) BIG_SCALE else SMALL_SCALE
         position = position % Home.PAGES
 
-
         return CuisineFragment().newInstance(context, position, scale)
     }
 
 
     override fun getCount(): Int {
-        Log.d("Boken","4")
 
         return Home.PAGES * Home.LOOPS
     }
 
     override fun transformPage(page: View, position: Float) {
-        Log.d("Boken","5")
 
         val myLinearLayout: cuisineLinearLayout = page.findViewById<View>(R.id.root) as cuisineLinearLayout
         var scale = BIG_SCALE

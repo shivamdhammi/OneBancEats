@@ -36,35 +36,28 @@ class CuisineFragment: Fragment(){
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        Log.d("Boken","1")
         with(cuisineData) {
-            add(CuisineData("North Indian", R.drawable.north_indian))
-            add(CuisineData("Chinese", R.drawable.chinese))
-            add(CuisineData("Mexican", R.drawable.mexican))
-            add(CuisineData("South Indian", R.drawable.southindian))
-            add(CuisineData("Italian", R.drawable.pizza))
+            add(CuisineData(getString(R.string.north_indian), R.drawable.north_indian))
+            add(CuisineData(getString(R.string.chinese), R.drawable.chinese))
+            add(CuisineData(getString(R.string.mexican), R.drawable.mexican))
+            add(CuisineData(getString(R.string.south_indian), R.drawable.southindian))
+            add(CuisineData(getString(R.string.italian), R.drawable.pizza))
         }
         if (container == null) {
             return null
         }
-        Log.d("Boken","2")
 
         val l = inflater.inflate(R.layout.cuisine_item_infinite, container, false) as LinearLayout
         val pos = this.arguments!!.getInt("pos")
 
         l.cuisine_item_view_pager.Cuisine_Adapter_Name.text = cuisineData[pos].name
         l.cuisine_item_view_pager.Cuisine_Adapter_Image.setImageResource(cuisineData[pos].image)
-        Log.d("Dhammi","1")
         l.setOnClickListener {
-            Log.d("Dhammi","2")
             val intent = Intent(it.context, ListOfDishes::class.java)
             intent.putExtra("CuisineName", cuisineData[pos].name)
             startActivity(intent)
         }
-        Log.d("Dhammi","3")
 
-
-        Log.d("Boken", cuisineData[pos].name)
         val root: cuisineLinearLayout = l.findViewById<View>(R.id.root) as cuisineLinearLayout
         val scale = this.arguments!!.getFloat("scale")
         root.setScaleBoth(scale)
