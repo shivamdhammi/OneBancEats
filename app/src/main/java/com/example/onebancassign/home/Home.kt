@@ -87,41 +87,41 @@ class Home : AppCompatActivity() {
         cuisineDishes[getString(R.string.north_indian)] = dishes
 
         dishes = ArrayList(emptyList<DishesData>())
-        dishes.add(DishesData(getString(R.string.chole_bhature), 100, 0, 0, 1.9f))
-        dishes.add(DishesData(getString(R.string.rajma_chawal), 200, 0, 0, 4.3f))
-        dishes.add(DishesData(getString(R.string.prantha), 150, 0, 0, 5.0f))
-        dishes.add(DishesData(getString(R.string.chole_puri), 100, 0, 0, 1.9f))
-        dishes.add(DishesData(getString(R.string.aaloo_gobi), 200, 0, 0, 4.3f))
-        dishes.add(DishesData(getString(R.string.daal_makhni), 150, 0, 0, 5.0f))
+        dishes.add(DishesData(getString(R.string.fried_bat), 100, 0, 0, 1.9f))
+        dishes.add(DishesData(getString(R.string.steamed_bat), 200, 0, 0, 4.3f))
+        dishes.add(DishesData(getString(R.string.bat_soup), 150, 0, 0, 5.0f))
+        dishes.add(DishesData(getString(R.string.dumpling), 100, 0, 0, 1.9f))
+        dishes.add(DishesData(getString(R.string.bat), 200, 0, 0, 4.3f))
+        dishes.add(DishesData(getString(R.string.bat_manchurian), 150, 0, 0, 5.0f))
         cuisineDishes[getString(R.string.chinese)] = dishes
 
 
         dishes = ArrayList(emptyList<DishesData>())
-        dishes.add(DishesData(getString(R.string.chole_bhature), 100, 0, 0, 1.9f))
-        dishes.add(DishesData(getString(R.string.rajma_chawal), 200, 0, 0, 4.3f))
-        dishes.add(DishesData(getString(R.string.prantha), 150, 0, 0, 5.0f))
-        dishes.add(DishesData(getString(R.string.chole_puri), 100, 0, 0, 1.9f))
-        dishes.add(DishesData(getString(R.string.aaloo_gobi), 200, 0, 0, 4.3f))
-        dishes.add(DishesData(getString(R.string.daal_makhni), 150, 0, 0, 5.0f))
+        dishes.add(DishesData(getString(R.string.pizza), 100, 0, 0, 1.9f))
+        dishes.add(DishesData(getString(R.string.pasta), 200, 0, 0, 4.3f))
+        dishes.add(DishesData(getString(R.string.lasagna), 150, 0, 0, 5.0f))
+        dishes.add(DishesData(getString(R.string.speghati), 100, 0, 0, 1.9f))
+        dishes.add(DishesData(getString(R.string.calzone), 200, 0, 0, 4.3f))
+        dishes.add(DishesData(getString(R.string.garlic_bread), 150, 0, 0, 5.0f))
         cuisineDishes[getString(R.string.italian)] = dishes
 
 
         dishes = ArrayList(emptyList<DishesData>())
-        dishes.add(DishesData(getString(R.string.chole_bhature), 100, 0, 0, 1.9f))
-        dishes.add(DishesData(getString(R.string.rajma_chawal), 200, 0, 0, 4.3f))
-        dishes.add(DishesData(getString(R.string.prantha), 150, 0, 0, 5.0f))
-        dishes.add(DishesData(getString(R.string.chole_puri), 100, 0, 0, 1.9f))
-        dishes.add(DishesData(getString(R.string.aaloo_gobi), 200, 0, 0, 4.3f))
-        dishes.add(DishesData(getString(R.string.daal_makhni), 150, 0, 0, 5.0f))
+        dishes.add(DishesData(getString(R.string.taco), 100, 0, 0, 1.9f))
+        dishes.add(DishesData(getString(R.string.black_beans) , 200, 0, 0, 4.3f))
+        dishes.add(DishesData(getString(R.string.nachos), 150, 0, 0, 5.0f))
+        dishes.add(DishesData(getString(R.string.cheese_nachos), 100, 0, 0, 1.9f))
+        dishes.add(DishesData(getString(R.string.tandoori_nachos), 200, 0, 0, 4.3f))
+        dishes.add(DishesData(getString(R.string.mexican_lava_burger), 150, 0, 0, 5.0f))
         cuisineDishes[getString(R.string.mexican)] = dishes
 
         dishes = ArrayList(emptyList<DishesData>())
-        dishes.add(DishesData(getString(R.string.chole_bhature), 100, 0, 0, 1.9f))
-        dishes.add(DishesData(getString(R.string.rajma_chawal), 200, 0, 0, 4.3f))
-        dishes.add(DishesData(getString(R.string.prantha), 150, 0, 0, 5.0f))
-        dishes.add(DishesData(getString(R.string.chole_puri), 100, 0, 0, 1.9f))
-        dishes.add(DishesData(getString(R.string.aaloo_gobi), 200, 0, 0, 4.3f))
-        dishes.add(DishesData(getString(R.string.daal_makhni), 150, 0, 0, 5.0f))
+        dishes.add(DishesData(getString(R.string.dosa), 100, 0, 0, 1.9f))
+        dishes.add(DishesData(getString(R.string.idli), 200, 0, 0, 4.3f))
+        dishes.add(DishesData(getString(R.string.wada), 150, 0, 0, 5.0f))
+        dishes.add(DishesData(getString(R.string.sambhar), 100, 0, 0, 1.9f))
+        dishes.add(DishesData(getString(R.string.uttpam), 200, 0, 0, 4.3f))
+        dishes.add(DishesData(getString(R.string.upma), 150, 0, 0, 5.0f))
         cuisineDishes[getString(R.string.south_indian)] = dishes
 
         dishes = ArrayList(emptyList<DishesData>())

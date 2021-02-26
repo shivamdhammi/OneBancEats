@@ -38,7 +38,7 @@ class ListOfDishesAdapter(private var listOfDishes: ArrayList<DishesData?>) :
             with(itemView) {
                 dish_item_name.text = listOfDishes?.name
                 dish_item_rating.text = listOfDishes?.rating.toString()
-                dish_item_price.text = context.getString(R.string.rs_f, listOfDishes?.price)
+                dish_item_price.text = context.getString(R.string.rs_d, listOfDishes?.price)
                 if (checkForQuantity(listOfDishes)) {
                     dish_item_add.visibility = View.GONE
                     dish_item_quantity_counter.visibility = View.VISIBLE

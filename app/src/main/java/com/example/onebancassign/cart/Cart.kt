@@ -3,6 +3,7 @@ package com.example.onebancassign.cart
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.onebancassign.model.DishesData
@@ -11,7 +12,7 @@ import com.example.onebancassign.home.Home
 import kotlinx.android.synthetic.main.activity_cart.*
 
 class Cart : AppCompatActivity() {
-    private var selectedButton = "Delivery"
+    private var selectedButton = ""
     private lateinit var linearLayoutManager: LinearLayoutManager
     private var dishes = ArrayList<DishesData>()
     private var totalPrice = 0.0f
@@ -20,6 +21,7 @@ class Cart : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cart)
 
+        selectedButton = getString(R.string.delivery)
         initializeButtons()
         initializeCartList()
     }
@@ -27,6 +29,7 @@ class Cart : AppCompatActivity() {
     private fun initializeButtons() {
         cart_pickup_button.setBackgroundColor(Color.GRAY)
         cart_pickup_button.setOnClickListener {
+            Log.d("last error",selectedButton + getString(R.string.delivery) + getString(R.string.pick_up))
             if (selectedButton == getString(R.string.delivery)) {
                 cart_delivery_button.setBackgroundColor(Color.GRAY)
                 cart_pickup_button.setBackgroundColor(resources.getColor(R.color.pink))
@@ -36,6 +39,7 @@ class Cart : AppCompatActivity() {
 
         }
         cart_delivery_button.setOnClickListener {
+            Log.d("lastError",selectedButton + getString(R.string.delivery) + getString(R.string.pick_up))
             if (selectedButton == getString(R.string.pick_up)) {
                 cart_pickup_button.setBackgroundColor(Color.GRAY)
                 cart_delivery_button.setBackgroundColor(resources.getColor(R.color.pink))

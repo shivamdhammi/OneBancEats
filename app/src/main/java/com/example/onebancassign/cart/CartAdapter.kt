@@ -36,7 +36,7 @@ class CartAdapter(var listOfDishes: ArrayList<DishesData>) :
                 cart_item_dish_quantity.text =
                     context.getString(R.string.x_d, listOfDishes?.quantity)
                 val price = listOfDishes?.price!!.toInt() * listOfDishes.quantity!!.toInt()
-                cart_item_dish_price.text = context.getString(R.string.rs_f, price)
+                cart_item_dish_price.text = context.getString(R.string.rs_d, price)
             }
         }
     }
