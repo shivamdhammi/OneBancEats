@@ -7,23 +7,23 @@
     tools:context=".cart.Cart">
 
     <TextView
-        android:fontFamily="@font/baloo_tamma"
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
+        android:fontFamily="@font/baloo_tamma"
         android:text="@string/cart"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-                android:fontFamily="@font/baloo_tamma"
         android:id="@+id/textView2"
-        android:layout_marginHorizontal="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:fontFamily="@font/baloo_tamma"
         android:text="@string/select_payment"
         android:textSize="25sp"
         app:layout_constraintStart_toStartOf="@+id/textView"
@@ -32,8 +32,8 @@
     <LinearLayout
         android:id="@+id/textView3"
         android:layout_width="match_parent"
-        android:layout_marginHorizontal="20dp"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
         android:orientation="horizontal"
         android:weightSum="2"
         app:layout_constraintStart_toStartOf="@+id/textView2"
@@ -43,125 +43,135 @@
             android:id="@+id/cart_delivery_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
+            android:layout_marginEnd="10dp"
             android:layout_weight="1"
             android:fontFamily="@font/baloo_tamma"
             android:text="@string/delivery"
             android:textSize="16sp" />
 
         <Button
-            android:textSize="16sp"
-            android:fontFamily="@font/baloo_tamma"
             android:id="@+id/cart_pickup_button"
-            android:layout_marginStart="10dp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
             android:layout_weight="1"
+            android:fontFamily="@font/baloo_tamma"
             android:text="@string/pick_up"
+            android:textSize="16sp"
             tools:ignore="ButtonStyle" />
 
     </LinearLayout>
 
     <TextView
-        
-        android:textSize="25sp"
-        android:fontFamily="@font/baloo_tamma"
+
         android:id="@+id/cart_delivery_address"
-        android:layout_marginHorizontal="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:fontFamily="@font/baloo_tamma"
         android:text="@string/select_address"
+        android:textSize="25sp"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/cart_list_of_dishes"
-        android:layout_marginHorizontal="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
         app:layout_constraintStart_toStartOf="@+id/cart_delivery_address"
         app:layout_constraintTop_toBottomOf="@+id/cart_delivery_address" />
 
     <LinearLayout
+        android:id="@+id/cart_money"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:id="@+id/cart_money"
         android:layout_marginHorizontal="20dp"
+        android:orientation="vertical"
         app:layout_constraintStart_toStartOf="@+id/cart_delivery_address"
         app:layout_constraintTop_toBottomOf="@+id/cart_list_of_dishes">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="10">
+
             <TextView
-                android:fontFamily="@font/baloo_tamma"
                 android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="8"
-                android:textSize="20sp"
-                android:text="@string/total_amount"
-                android:layout_height="wrap_content"/>
-            <TextView
                 android:fontFamily="@font/baloo_tamma"
-                android:gravity="end"
-                android:textSize="20sp"
+                android:text="@string/total_amount"
+                android:textSize="20sp" />
+
+            <TextView
                 android:id="@+id/cart_sub_total"
                 android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="2"
+                android:fontFamily="@font/baloo_tamma"
+                android:gravity="end"
                 android:text="@string/money"
-                android:layout_height="wrap_content"/>
+                android:textSize="20sp" />
 
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="10">
+
             <TextView
-                android:fontFamily="@font/baloo_tamma"
                 android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="8"
-                android:textSize="20sp"
-                android:text="@string/cgst"
-                android:layout_height="wrap_content"/>
-            <TextView
                 android:fontFamily="@font/baloo_tamma"
-                android:gravity="end"
+                android:text="@string/cgst"
+                android:textSize="20sp" />
+
+            <TextView
                 android:id="@+id/cart_cgst"
                 android:layout_width="0dp"
-                android:textSize="20sp"
+                android:layout_height="wrap_content"
                 android:layout_weight="2"
+                android:fontFamily="@font/baloo_tamma"
+                android:gravity="end"
                 android:text="@string/money"
-                android:layout_height="wrap_content"/>
+                android:textSize="20sp" />
 
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="10">
+
             <TextView
-                android:fontFamily="@font/baloo_tamma"
                 android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="8"
-                android:text="@string/gst_2_5"
-                android:textSize="20sp"
-                android:layout_height="wrap_content"/>
-            <TextView
                 android:fontFamily="@font/baloo_tamma"
+                android:text="@string/gst_2_5"
+                android:textSize="20sp" />
+
+            <TextView
                 android:id="@+id/cart_gst"
                 android:layout_width="0dp"
-                android:gravity="end"
-                android:textSize="20sp"
+                android:layout_height="wrap_content"
                 android:layout_weight="2"
+                android:fontFamily="@font/baloo_tamma"
+                android:gravity="end"
                 android:text="@string/money"
-                android:layout_height="wrap_content"/>
+                android:textSize="20sp" />
 
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -169,24 +179,24 @@
             android:weightSum="10">
 
             <TextView
-                android:textColor="@color/black"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="7"
                 android:fontFamily="@font/baloo_tamma"
                 android:text="@string/grand_total"
+                android:textColor="@color/black"
                 android:textSize="25sp" />
 
             <TextView
-                android:textColor="@color/black"
-                android:fontFamily="@font/baloo_tamma"
                 android:id="@+id/cart_grand_total"
                 android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="3"
+                android:fontFamily="@font/baloo_tamma"
                 android:gravity="end"
-                android:textSize="25sp"
                 android:text="@string/money"
-                android:layout_height="wrap_content"/>
+                android:textColor="@color/black"
+                android:textSize="25sp" />
 
 
         </LinearLayout>
@@ -196,10 +206,10 @@
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/check_out"
-        android:fontFamily="@font/baloo_tamma"
-        android:textSize="16sp"
         android:layout_marginHorizontal="20dp"
+        android:fontFamily="@font/baloo_tamma"
+        android:text="@string/check_out"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/cart_money"
         app:layout_constraintTop_toBottomOf="@+id/cart_money" />
 </androidx.constraintlayout.widget.ConstraintLayout>

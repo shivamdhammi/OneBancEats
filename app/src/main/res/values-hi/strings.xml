@@ -30,4 +30,9 @@
     <string name="check_out">चेक आउट</string>
     <string name="money">पैसे</string>
     <string name="add">जोड़ना</string>
+    <string name="rs_f">₹ %f</string>
+    <string name="x_d">x %d</string>
+    <string name="language">language</string>
+    <string name="_0">0</string>
+    <string name="veg_icon">vegIcon</string>
 </resources>

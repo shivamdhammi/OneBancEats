@@ -6,5 +6,4 @@ data class DishesData(
     var image: Int?,
     var quantity: Int?,
     var rating: Float?
-) {
-}
+)

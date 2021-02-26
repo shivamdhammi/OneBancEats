@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:gravity="center">
-    <com.example.onebancassign.home.cuisine.cuisineLinearLayout
+    <com.example.onebancassign.home.cuisine.CuisineLinearLayout
         android:id="@+id/root"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,5 +16,5 @@
             layout="@layout/cuisine_item"
             android:id="@+id/cuisine_item_view_pager">
         </include>
-    </com.example.onebancassign.home.cuisine.cuisineLinearLayout>
+    </com.example.onebancassign.home.cuisine.CuisineLinearLayout>
 </LinearLayout>

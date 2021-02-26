@@ -1,9 +1,7 @@
 package com.example.onebancassign.home.cuisine
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,11 +14,8 @@ import com.example.onebancassign.model.CuisineData
 import kotlinx.android.synthetic.main.cuisine_item.view.*
 import kotlinx.android.synthetic.main.cuisine_item_infinite.view.*
 
-class CuisineFragment: Fragment(){
-    var cuisineData = ArrayList<CuisineData>()
-
-
-
+class CuisineFragment : Fragment() {
+    private var cuisineData = ArrayList<CuisineData>()
 
     fun newInstance(context: Home?, pos: Int, scale: Float): Fragment {
         val b = Bundle()
@@ -58,7 +53,7 @@ class CuisineFragment: Fragment(){
             startActivity(intent)
         }
 
-        val root: cuisineLinearLayout = l.findViewById<View>(R.id.root) as cuisineLinearLayout
+        val root: CuisineLinearLayout = l.findViewById<View>(R.id.root) as CuisineLinearLayout
         val scale = this.arguments!!.getFloat("scale")
         root.setScaleBoth(scale)
         return l
